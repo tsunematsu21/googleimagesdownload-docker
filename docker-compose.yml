@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  download:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./downloads:/googleimagesdownload/downloads
+    entrypoint:
+      - googleimagesdownload
+      - -cd
+      - /usr/local/bin/chromedriver
